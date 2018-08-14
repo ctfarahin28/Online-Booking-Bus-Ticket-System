@@ -1,0 +1,97 @@
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db ="reg";
+
+$conn = mysqli_connect($servername, $username, $password, $db);
+
+    $conn = mysqli_connect("localhost", "root", "", "reg");
+
+
+mysql_connect('localhost' , 'root' , '');
+
+
+mysql_Select_db('reg');
+
+$sql="SELECT *FROM bookingdetails";
+
+$records=mysql_queery($sql);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+<html>
+<head>
+<title> Review User Booking Details Data</title>
+</head>
+
+
+<body>
+
+<table width="600" border="1" cellpadding="1" cellspacing="1">
+<tr>
+
+<th>NAME</th>
+<th>IC/PASSPORT</th>
+<th>DEPARTURE_DATE </th>
+<th>TIME</th>
+<th>DEPARTURE</th>
+<th>ARRIVAL</th>
+
+<tr>
+
+
+<?php
+
+
+while($bookingdetails=mysql_fetch_Assoc($records))
+{
+echo "<tr>";
+
+echo "<td>.$bookingdetails['name']."</td>";
+
+echo "<td>.$bookingdetails['ic']."</td>";
+
+echo "<td>.$bookingdetails['dep_date']."</td>";
+
+echo "<td>.$bookingdetails['masa']."</td>";
+
+echo "<td>.$bookingdetails['Departure']."</td>";
+
+echo "<td>.$bookingdetails['Arrival']."</td>";
+
+
+
+
+
+
+echo "</tr>;
+
+}//end while 
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
